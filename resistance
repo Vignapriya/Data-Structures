@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+class voltage
+{
+   public:
+   float v1,v2,v3;
+     voltage()
+      {
+         v1=0;
+         v2=0;
+         v3=0;
+
+      }
+
+      void resistance(int r1)
+      {
+         float current=100/r1;
+         float v1=current*r1;
+         cout<<"total resistance="<<r1<<endl;
+         cout<<"voltage across r1="<<v1<<endl;
+      }
+      void resistance(int r2,int r3)
+      {
+         float current=100/(r2+r3);
+         float v2=current*r2;
+         float v3=current*r3;
+         int total=r2+r3;
+         cout<<"total resistance="<<total<<endl;
+         cout<<"voltage across r1="<<v2<<endl;
+         cout<<"voltage across r2="<<v3<<endl;
+      }
+      void resistance(int r4,int r5,int r6)
+      {
+         float current=100/(r4+r5+r6);
+         float v4=current*r4;
+         float v5=current*r5;
+         float v6=current*r6;
+         int total=r4+r5+r6;
+         cout<<"total resistance="<<total<<endl;
+         cout<<"voltage across r1="<<r4<<endl;
+         cout<<"voltage across r2="<<r5<<endl;
+         cout<<"voltage across r3="<<r6<<endl;
+      }
+};
+int main()
+{
+   voltage v1;
+   v1.resistance(2);
+   v1.resistance(2,3);
+   v1.resistance(2,3,4);
+   return 0;
+}
