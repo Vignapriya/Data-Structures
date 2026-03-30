@@ -1,0 +1,40 @@
+#include<cstring>
+using namespace std;
+class String
+{
+   char* str;
+   public:
+   String()
+   {
+      str=new char[1];
+      str[0]='\0';
+   }
+   String(const char* s)
+   {
+      int len=strlen(s);
+      str=new char[len+1];
+      strcpy(str,s);
+   }
+   String(const char* s1,const char* s2)
+   {
+      int len1=strlen(s1);
+      int len2=strlen(s2);
+      str=new char[len1+len2+1];
+      strcpy(str,s1);
+      strcat(str,s2);
+   }
+   void display()
+   {
+      cout<<str<<endl;
+   }
+};
+int main()
+{
+   String s1;
+   String s2("hello");
+   String s3("hello","world");
+   s1.display();
+   s2.display();
+   s3.display();
+   return 0;
+}
